@@ -7,23 +7,30 @@ import {
   SafeAreaView,
   ImageBackground,
 } from 'react-native';
+import AppButton from '../components/AppButton';
 
 function WelcomeScreen(props) {
   return (
     <ImageBackground
+      blurRadius={10}
       style={styles.background}
       source={require('../assets/background.jpg')}>
       <Image style={styles.logo} source={require('../assets/logo-red.png')} />
-      <Text style={{marginTop: 20}}>See What You Don't Need</Text>
+      <Text style={styles.tagline}>See What You Don't Need</Text>
       <View style={styles.buttonContainer}>
-        <View style={styles.loginButton} />
-        <View style={styles.registerButton} />
+        <AppButton title="Login" color="secondary" />
+        <AppButton title="Register" />
       </View>
     </ImageBackground>
   );
 }
 
 const styles = StyleSheet.create({
+  tagline: {
+    fontSize: 25,
+    fontWeight: '600',
+    paddingVertical: 20,
+  },
   background: {
     flex: 1,
     alignItems: 'center', // cross axis
@@ -35,16 +42,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     position: 'absolute',
     bottom: 0,
-  },
-  loginButton: {
-    width: '100%',
-    height: 70,
-    backgroundColor: '#fc5c65',
-  },
-  registerButton: {
-    width: '100%',
-    height: 70,
-    backgroundColor: 'dodgerblue',
+    padding: 10,
   },
   logo: {
     width: 100,
