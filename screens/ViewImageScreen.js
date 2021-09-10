@@ -1,12 +1,20 @@
 import React from 'react';
 import {Image, StyleSheet, View} from 'react-native';
-import colors from '../config/colors';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 function ViewImageScreen(props) {
   return (
     <View style={styles.container}>
-      <View style={styles.leftBox} />
-      <View style={styles.rightBox} />
+      <View style={styles.leftBox}>
+        <MaterialCommunityIcons name="close" color="white" size={35} />
+      </View>
+      <View style={styles.rightBox}>
+        <MaterialCommunityIcons
+          name="trash-can-outline"
+          color="white"
+          size={35}
+        />
+      </View>
 
       <Image
         resizeMode="contain"
@@ -20,17 +28,13 @@ function ViewImageScreen(props) {
 const styles = StyleSheet.create({
   leftBox: {
     position: 'absolute',
-    width: 50,
-    height: 50,
-    backgroundColor: colors.primary,
+    margin: 20,
   },
   rightBox: {
+    margin: 20,
     right: 0,
     alignItems: 'flex-end',
     position: 'absolute',
-    width: 50,
-    height: 50,
-    backgroundColor: colors.secondary,
   },
   container: {
     backgroundColor: '#000',

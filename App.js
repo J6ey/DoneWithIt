@@ -7,7 +7,8 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import AppButton from './components/AppButton';
 import Card from './components/Card';
 import ListingDetailsScreen from './screens/ListingDetailsScreen';
+import MessagesScreen from './screens/MessagesScreen';
 
 export default function App() {
-  return <ListingDetailsScreen />;
+  return <MessagesScreen />;
 }
