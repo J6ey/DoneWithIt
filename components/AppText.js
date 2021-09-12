@@ -1,5 +1,5 @@
 import React from 'react';
-import {Text, StyleSheet} from 'react-native';
+import {Text, StyleSheet, Platform} from 'react-native';
 
 //<Heading> My heading component </Heading>
 
@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
   text: {
     color: 'black',
     fontSize: 19,
-    fontFamily: 'Roboto',
+    fontFamily: Platform.OS === 'android' ? 'Roboto' : 'Arial',
   },
 });
 export default AppText;
