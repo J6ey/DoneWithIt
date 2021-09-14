@@ -1,7 +1,7 @@
 import React from 'react';
 import {Platform, TextInput, View, StyleSheet} from 'react-native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-import colors from '../config/colors';
+import defaultStyles from '../config/styles';
 
 function AppTextInput({icon, ...otherProps}) {
   return (
@@ -10,11 +10,11 @@ function AppTextInput({icon, ...otherProps}) {
         <MaterialCommunityIcons
           name={icon}
           size={20}
-          color={colors.medium}
+          color={defaultStyles.colors.medium}
           style={styles.icon}
         />
       )}
-      <TextInput style={styles.textInput} {...otherProps} />
+      <TextInput style={defaultStyles.text} {...otherProps} />
     </View>
   );
 }
@@ -23,13 +23,8 @@ const styles = StyleSheet.create({
   icon: {
     marginHorizontal: 10,
   },
-  textInput: {
-    color: colors.dark,
-    fontSize: 18,
-    fontFamily: Platform.OS === 'android' ? 'Roboto' : 'Avenir',
-  },
   container: {
-    backgroundColor: colors.light,
+    backgroundColor: defaultStyles.colors.light,
     borderRadius: 25,
     flexDirection: 'row',
     width: '100%',
