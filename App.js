@@ -19,17 +19,16 @@ import MessagesScreen from './screens/MessagesScreen';
 import Screen from './components/Screen';
 import AppTextInput from './components/AppTextInput';
 import {Picker} from '@react-native-picker/picker';
+import AppPicker from './components/AppPicker';
 
 export default function App() {
   const [selectedLanguage, setSelectedLanguage] = React.useState();
   // const [isNew, setIsNew] = useState(false);
 
   return (
-    <Picker
-      selectedValue={selectedLanguage}
-      onValueChange={(itemValue, itemIndex) => setSelectedLanguage(itemValue)}>
-      <Picker.Item label="JAVA" value="java" />
-      <Picker.Item label="JS" value="javascript" />
-    </Picker>
+    <Screen>
+      <AppPicker icon="apps" placeholder="Category" />
+      <AppTextInput icon="email" placeholder="Email" />
+    </Screen>
   );
 }
