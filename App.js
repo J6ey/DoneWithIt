@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import WelcomeScreen from './screens/WelcomeScreen';
 import ViewImageScreen from './screens/ViewImageScreen';
 import {
@@ -20,15 +20,30 @@ import Screen from './components/Screen';
 import AppTextInput from './components/AppTextInput';
 import {Picker} from '@react-native-picker/picker';
 import AppPicker from './components/AppPicker';
+import LoginScreen from './screens/LoginScreen';
+import ListingEditScreen from './screens/ListingEditScreen';
+
+// const categories = [
+//   {label: 'Furniture', value: 1},
+//   {label: 'Clothing', value: 2},
+//   {label: 'Cameras', value: 3},
+// ];
 
 export default function App() {
-  const [selectedLanguage, setSelectedLanguage] = React.useState();
-  // const [isNew, setIsNew] = useState(false);
+  return <ListingEditScreen />;
 
-  return (
-    <Screen>
-      <AppPicker icon="apps" placeholder="Category" />
-      <AppTextInput icon="email" placeholder="Email" />
-    </Screen>
-  );
+  // Custom AppPicker
+  // const [category, setCategory] = useState(categories[0]);
+  // return (
+  //   <Screen>
+  //     <AppPicker
+  //       selectedItem={category}
+  //       onSelectItem={item => setCategory(item)}
+  //       items={categories}
+  //       icon="apps"
+  //       placeholder="Category"
+  //     />
+  //     <AppTextInput icon="email" placeholder="Email" />
+  //   </Screen>
+  // );
 }
