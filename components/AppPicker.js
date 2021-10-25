@@ -12,6 +12,7 @@ import {
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import defaultStyles from '../config/styles';
 import AppText from './AppText';
+import Screen from './Screen';
 
 function AppPicker({icon, placeholder, ...otherProps}) {
   const [modalVisible, setModalVisible] = useState(false);
@@ -38,7 +39,9 @@ function AppPicker({icon, placeholder, ...otherProps}) {
       </TouchableWithoutFeedback>
 
       <Modal visible={modalVisible} animationType="slide">
-        <Button title="Close" onPress={() => setModalVisible(false)} />
+        <Screen>
+          <Button title="Close" onPress={() => setModalVisible(false)} />
+        </Screen>
       </Modal>
     </React.Fragment>
   );
