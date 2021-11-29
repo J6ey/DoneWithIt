@@ -5,8 +5,12 @@ import defaultStyles from '../config/styles';
 //<Heading> My heading component </Heading>
 
 // This is a custom component
-function AppText({children, style}) {
-  return <Text style={[defaultStyles.text, style]}>{children}</Text>;
+function AppText({children, style, ...otherProps}) {
+  return (
+    <Text style={[defaultStyles.text, style]} {...otherProps}>
+      {children}
+    </Text>
+  );
 }
 
 export default AppText;
